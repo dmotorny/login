@@ -1,0 +1,17 @@
+<div ng-repeat="mail in $ctrl.mails[$ctrl.boxId]" mail="mail">
+  <div class="one_mail">
+    <label class="shorttext_label" for="mail_checking_{{mail.id}}">
+      <div class="mail_short">
+        <input id='mail_checking_{{mail.id}}' class='checking' type="checkbox" ng-model="show">
+        <label for='mail_checking_{{mail.id}}' class="mail_shorttext"><span class="sender_span">{{mail.sender}}</span>/<span class="subject_span">{{mail.subject}}</span></label>
+        <div class="mail_date">{{mail.date}}</div>
+      </div>
+    </label>
+    <div ng-if="show" class="mail_full">
+      <div class="mail_head"><span>From</span>{{mail.sender}}</div>
+      <div class="mail_head"><span>Subject</span>{{mail.subject}}</div>
+      <div class="mail_body">{{mail.text}}</div>
+      <div class="mail_body">{{mail.toggle}}</div>
+    </div>
+  </div>
+</div>
